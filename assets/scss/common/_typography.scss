@@ -13,6 +13,7 @@ html {
 body {
   color: $color-primary;
   background-color: $color-light;
+  letter-spacing: 0.1em;
 }
 
 h1 {
@@ -22,6 +23,7 @@ h1 {
   letter-spacing: 0.08em;
   font-weight: 300;
   text-align: center;
+  line-height: 1.2em;
 }
 
 a {
