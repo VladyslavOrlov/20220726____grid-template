@@ -7,10 +7,10 @@
   background-color: rgba($color-light, 0.1);
   border: 2px solid $color-light;
   padding: 0.5em 1em;
-
   font-size: 18px;
   letter-spacing: 0.1em;
   transition: background-color 0.5s;
+
   &:hover,
   &:focus {
     background-color: $color-accent;
