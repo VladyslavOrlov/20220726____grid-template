@@ -3,13 +3,16 @@
 
 .header {
   position: relative;
-  background-color: $color-primary;
-  background-image: url(../../../../assets/img/img-header.png);
-  min-height: 100vh;
-  color: $color-light;
+
   display: grid;
   align-content: center;
+
+  min-height: 100vh;
   padding: 150px 0;
+
+  color: $color-light;
+  background-color: $color-primary;
+  background-image: url(../../../../assets/img/img-header.png);
   background-position: center;
   background-size: cover;
 }

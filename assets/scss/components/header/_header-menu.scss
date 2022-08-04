@@ -3,17 +3,17 @@
 
 .header-menu {
   position: absolute;
+  position: absolute;
+  z-index: 2;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 2;
-  position: absolute;
 
   &__container {
-    @extend %container;
-
     display: flex;
     align-items: center;
+
+    @extend %container;
     gap: $gap;
   }
 }

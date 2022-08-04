@@ -10,8 +10,9 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     justify-content: end;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     @include unlist(0 -20px 0 0);
   }
 
@@ -21,10 +22,13 @@
 
   &__link {
     display: block;
+
     padding: $gap $gap-sm;
-    font-size: 18px;
-    letter-spacing: 0.09em;
+
     transition: color 0.5s;
+    letter-spacing: 0.09em;
+
+    font-size: 18px;
 
     &:hover,
     &:focus {
