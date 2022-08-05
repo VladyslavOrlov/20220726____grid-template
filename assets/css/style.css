@@ -311,6 +311,20 @@ template {
   display: none;
 }
 
+.header-content__container, .header-menu__container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* ul */
+/* xl */
+/* lg */
+/* md */
+/* sm */
+/* xs */
+/* xx */
 *,
 *::before,
 *::after {
@@ -334,7 +348,6 @@ h1 {
   text-align: center;
   letter-spacing: 0.08em;
   font-family: "Roboto Slab", serif;
-  font-size: 3.75rem;
   font-weight: 300;
   line-height: 1.2em;
 }
@@ -344,20 +357,6 @@ a {
   color: #ffffff;
 }
 
-.header-content__container, .header-menu__container {
-  max-width: 1340px;
-  margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-/* ul */
-/* xl */
-/* lg */
-/* md */
-/* sm */
-/* xs */
-/* xx */
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -368,8 +367,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-width: 250px;
-  height: 60px;
   padding: 0.5em 1em;
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
@@ -377,17 +374,16 @@ a {
   letter-spacing: 0.1em;
   border: 2px solid #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
-  font-size: 18px;
 }
 .btn:hover, .btn:focus {
   background-color: #d66926;
 }
 .btn--light {
-  min-width: 250px;
   background-color: rgba(255, 255, 255, 0.1);
 }
 .btn--primary {
-  min-width: 350px;
+  height: 60px;
+  font-size: 1.125rem;
   border: 2px solid #2d3651;
   background-color: rgba(45, 54, 81, 0.8);
 }
@@ -497,7 +493,6 @@ a {
   top: 0;
 }
 .header-content__title {
-  margin: 0 0 53px;
   text-align: center;
 }
 .header-content__actions {
@@ -509,14 +504,9 @@ a {
           justify-content: center;
   gap: 20px;
 }
-
-.skills {
-  padding: 10px;
-}
 .skills__container {
   display: grid;
   margin-bottom: 20px;
-  gap: 10px;
 }
 .skills__actions {
   display: -webkit-box;
@@ -525,7 +515,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 30px;
 }
 
 .skill-item {
@@ -565,6 +554,8 @@ a {
   -o-transition: transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
+  background-position: center;
+  background-size: cover;
   position: absolute;
   top: 0;
   right: 0;
@@ -631,27 +622,85 @@ a {
   grid-area: a9;
 }
 
+@media (min-width: 576px) {
+  .btn--primary {
+    width: 350px;
+  }
+  .skills {
+    padding: 10px;
+  }
+  .skills__container {
+    gap: 10px;
+  }
+  .skills__actions {
+    margin-bottom: 30px;
+  }
+}
+
 @media (min-height: 691px) {
   .skills__container {
     grid-auto-rows: calc(33.33333vh - 13.333333px);
   }
 }
 
+@media (min-width: 768px) {
+  .skill-item__title {
+    font-size: 1.25rem;
+  }
+}
+
 @media (min-width: 992px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+  .btn--light {
+    min-width: 250px;
+    height: 60px;
+    font-size: 1.125rem;
+  }
+  .header-content__title {
+    margin: 0 0 53px;
+  }
   .skills__container {
     grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 991.8px) and (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .btn--light {
+    min-width: 200px;
+    height: 50px;
+  }
+  .header-content__title {
+    margin: 0 0 43px;
+  }
   .skills__container {
     grid-template-areas: "a1 a1 a2" "a3 a3 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 767px) and (min-width: 576px) {
+@media (max-width: 767.8px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+  .btn--light {
+    min-width: 170px;
+    height: 40px;
+  }
+  .header-content__title {
+    margin: 0 0 33px;
+  }
+  .skill-item__title {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 767.8px) and (min-width: 576px) {
   .skills__container {
     grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
     grid-template-columns: 1fr;
@@ -664,8 +713,24 @@ a {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.8px) {
+  .btn--primary {
+    width: 100%;
+  }
+  .header-content__actions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .skills {
+    padding: 20px;
+  }
   .skills__container {
+    gap: 20px;
     grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
     grid-template-columns: 1fr;
   }

@@ -1,4 +1,5 @@
 @use "../presets" as *;
+@use "../mixins";
 
 *,
 *::before,
@@ -20,14 +21,44 @@ body {
   background-color: $color-light;
 }
 
+@mixin lg-min {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin lg-md {
+  @media (max-width: $lg - 0.2px) and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $md - 0.2px) {
+    @content;
+  }
+}
+
 h1 {
   text-align: center;
   letter-spacing: 0.08em;
 
   font-family: $font-header;
-  font-size: 3.75rem;
+
   font-weight: 300;
   line-height: 1.2em;
+
+  @include lg-min {
+    font-size: 3.75rem;
+  }
+
+  @include lg-md {
+    font-size: 2.5rem;
+  }
+
+  @include md {
+    font-size: 1.875rem;
+  }
 }
 
 a {
