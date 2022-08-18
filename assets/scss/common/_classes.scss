@@ -8,10 +8,12 @@
 
   padding: 0.5em 1em;
 
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
   letter-spacing: 0.1em;
 
-  border: 2px solid $color-light;
+  border-width: 2px;
+  border-style: solid;
+  // border: 2px solid $color-light;
   background-color: rgba($color-light, 0.1);
 
   &:hover,
