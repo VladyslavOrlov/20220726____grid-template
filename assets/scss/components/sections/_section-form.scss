@@ -2,7 +2,7 @@
 @use "../../mixins" as *;
 
 .form {
-  padding: 30px 0;
+  padding: $gap-lg 0;
   background-color: $color-primary;
 
   &__container {
@@ -18,41 +18,58 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
-}
 
-.form-item {
-  &__input {
-    display: block;
+  .btn--primary {
     width: 100%;
-    height: 60px;
-    padding-right: 30px;
-    padding-left: 30px;
-    transition: background-color 0.5s, border-color 0.5s;
-    letter-spacing: 0.15em;
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0);
-    border-bottom-color: rgba(255, 255, 255, 0.25);
-    background-color: rgba(255, 255, 255, 0.05);
-    font-size: 1.125rem;
-  }
+    color: $color-light;
+    border-color: rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.2);
+    background-color: rgba($color-light, 0.1);
 
-  &:nth-of-type(1) {
-    @include md-sm {
-      grid-column: 1 / span 2;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+
+      background-color: $color-accent;
+      border-color: $color-light;
     }
   }
 }
 
-.form .btn--primary {
-  width: 100%;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
+.form-item {
+  @include md-sm {
+    &:nth-of-type(1) {
+      grid-column: 1 / span 2;
+    }
+  }
 
-  &:hover,
-  &:focus {
-    background-color: $color-accent;
-    border-color: $color-light;
+  &__input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding-right: $gap-lg;
+    padding-left: $gap-lg;
+    transition: background-color 0.5s, border-color 0.5s;
+    letter-spacing: 0.15em;
+    color: $color-light;
+    border: 2px solid rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.25);
+    background-color: rgba($color-light, 0.05);
+    font-size: 1.125rem;
+
+    &::placeholder {
+      color: $color-gray;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: rgba($color-light, 0.15);
+      border-bottom-color: $color-light;
+      background-color: rgba($color-light, 0.15);
+
+      &::placeholder {
+        color: lighten($color-gray, 15%);
+      }
+    }
   }
 }
