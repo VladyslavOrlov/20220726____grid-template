@@ -62,8 +62,6 @@
     height: 23px;
     position: relative;
     margin: $gap 0;
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
     cursor: pointer;
 
     @include md-min {
