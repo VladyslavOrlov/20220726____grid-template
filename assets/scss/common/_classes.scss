@@ -13,8 +13,6 @@
 
   border-width: 2px;
   border-style: solid;
-  // border: 2px solid $color-light;
-  background-color: rgba($color-light, 0.1);
 
   &:hover,
   &:focus {
@@ -22,6 +20,7 @@
   }
 
   &--light {
+    border-color: $color-light;
     background-color: rgba($color-light, 0.1);
 
     @include lg-min {
@@ -43,15 +42,15 @@
     height: 60px;
     font-size: 1.125rem;
 
+    border-color: $color-primary;
+    background-color: rgba($color-primary, 0.8);
+
     @include sm-min {
       width: 350px;
     }
     @include sm {
       width: 100%;
     }
-
-    border: 2px solid $color-primary;
-    background-color: rgba($color-primary, 0.8);
   }
 }
 

@@ -2,13 +2,66 @@
 @use "../../mixins" as *;
 
 .header-navbar {
-  flex-grow: 1;
+  display: grid;
+  align-items: center;
+  letter-spacing: 0.1em;
+  justify-items: end;
+
+  &__list {
+    @include md-min {
+      display: grid;
+      justify-content: end;
+      width: 100%;
+      gap: $gap;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      @include unlist(0 (-$gap-sm) 0 0);
+    }
+
+    @include md {
+      position: absolute;
+      display: none;
+      background-color: rgba($color-gray-dark, 0.9);
+      right: $gap;
+      top: 100%;
+      text-align: right;
+
+      @include unlist;
+      @include box-shadow;
+    }
+  }
+
+  &__item {
+    @include md {
+      margin: $gap $gap-sm;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    transition: color 0.5s;
+
+    font-size: 1.125rem;
+
+    @include md-min {
+      padding: $gap $gap-sm;
+    }
+
+    @include md {
+      padding: $gap-sm $gap;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-accent;
+    }
+  }
 
   &__btn {
     width: 30px;
-    height: 22.5px;
+    height: 23px;
     position: relative;
-    margin: 25px 0 25px auto;
+    margin: $gap 0;
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
@@ -57,56 +110,6 @@
         top: 9px;
         transform: rotate(-135deg);
       }
-    }
-  }
-
-  &__list {
-    @include md-min {
-      display: grid;
-      justify-content: end;
-      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-      @include unlist(0 -10px 0 0);
-      gap: $gap;
-    }
-
-    @include md {
-      display: none;
-      @include unlist;
-      background-color: rgba($color-gray-dark, 0.95);
-      position: absolute;
-      right: 20px;
-      top: 100%;
-      text-align: right;
-
-      @include box-shadow;
-    }
-  }
-
-  &__item {
-    @include md {
-      margin: $gap $gap-sm;
-    }
-  }
-
-  &__link {
-    display: block;
-
-    @include md-min {
-      padding: $gap $gap-sm;
-    }
-
-    @include md {
-      padding: $gap-sm $gap;
-    }
-
-    transition: color 0.5s;
-    letter-spacing: 0.09em;
-
-    font-size: 18px;
-
-    &:hover,
-    &:focus {
-      color: $color-accent;
     }
   }
 }

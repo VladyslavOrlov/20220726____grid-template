@@ -3,7 +3,6 @@
 
 .header-menu {
   position: absolute;
-  position: absolute;
   z-index: 2;
   top: 0;
   right: 0;
@@ -15,10 +14,10 @@
   }
 
   &__container {
-    display: flex;
-    align-items: center;
+    display: grid;
 
     @extend %container;
     gap: $gap;
+    grid-template-columns: auto 1fr;
   }
 }

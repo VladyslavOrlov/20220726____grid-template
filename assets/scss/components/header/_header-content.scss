@@ -4,9 +4,9 @@
 .header-content {
   position: relative;
   z-index: 1;
-  top: 0;
 
   &__container {
+    display: grid;
     @extend %container;
   }
 

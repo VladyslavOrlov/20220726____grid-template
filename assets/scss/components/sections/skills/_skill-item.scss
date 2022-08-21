@@ -3,13 +3,14 @@
 
 .skill-item {
   position: relative;
-
+  display: grid;
   overflow: hidden;
-
-  background-color: $color-primary;
+  align-items: center;
+  padding: $gap;
+  justify-items: center;
+  // background-color: $color-primary;
 
   &__title {
-    position: relative;
     z-index: 1;
 
     margin: 0;
@@ -29,14 +30,15 @@
     justify-content: center;
 
     height: 100%;
-    padding: 1em;
+    padding: $gap;
 
     transition: color 0.5s;
   }
   &__image {
     transition: transform 0.5s;
 
-    background-position: center;
+    background-color: $color-primary;
+    background-position: 50% 50%;
     background-size: cover;
 
     @include abs-position;
